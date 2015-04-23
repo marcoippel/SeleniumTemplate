@@ -8,6 +8,7 @@
         Ipad,
         Nexus5,
         GalaxyS4,
-        GalaxyTab
+        GalaxyTab,
+        Desktop
     }
 }

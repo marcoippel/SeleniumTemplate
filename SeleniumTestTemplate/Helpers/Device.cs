@@ -41,22 +41,35 @@ namespace SeleniumTestTemplate.Helpers
                             "Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3"
                     };
                     break;
-                //case Devices.GalaxyS4:
-                //    return new Size(360, 640);
-                //    break;
-                //case Devices.GalaxyTab:
-                //    return new Size(1024, 600);
-                //    break;
-                //case Devices.Nexus5:
-                //    return new Size(360, 640);
-                //    break;
-                    default:
+                case Devices.GalaxyS4:
                     return new DeviceModel
                     {
-                        ScreenSize = new Size(1024, 768),
-                        UserAgent =
-                            "Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3"
+                        ScreenSize = new Size(360, 640),
+                        UserAgent = "Mozilla/5.0 (Linux; Android 4.2.2; GT-I9505 Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.136 Mobile Safari/537.36"
                     };
+                    break;
+                case Devices.GalaxyTab:
+                    return new DeviceModel
+                    {
+                        ScreenSize = new Size(1280, 800),
+                        UserAgent = "Mozilla/5.0 (Linux; U; Android 3.0; xx-xx; GT-P7100 Build/HRI83) AppleWebkit/534.13 (KHTML, like Gecko) Version/4.0 Safari/534.13"
+                    };
+                    break;
+                case Devices.Nexus5:
+                return new DeviceModel
+                {
+                    ScreenSize = new Size(360, 640),
+                    UserAgent =
+                        "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 5 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Mobile Safari/537.36"
+                };
+                break;
+                
+                default:
+                return new DeviceModel
+                {
+                    ScreenSize = new Size(1280, 1024),
+                    UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0"
+                };
             }
         }
     }

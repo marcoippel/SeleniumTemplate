@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Configuration;
-using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
+using SeleniumTestTemplate.Enums;
 using SeleniumTestTemplate.Extensions;
 using SeleniumTestTemplate.Helpers;
 
@@ -11,11 +10,8 @@ namespace SeleniumTestTemplate.Business
     public class SeleniumBase
     {
         protected static IWebDriver Driver;
-        public TestContext TestContext { get; set; }
 
-        
-
-        protected string BaseUrl
+        private static string BaseUrl
         {
             get
             {
@@ -33,19 +29,11 @@ namespace SeleniumTestTemplate.Business
             }
         }
 
-        protected void SetupDriver()
+        protected void SetupDriver(Devices device)
         {
             Console.WriteLine("Setting up web driver using base url '{0}'", BaseUrl);
-            Driver = SeleniumDriverHelper.GetDriver();
+            Driver = SeleniumDriverHelper.GetDriver(device);
             Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-            Driver.Manage().Window.Maximize();
-        }
-
-        protected void SetupMobileDriver(string userAgent)
-        {
-            var profile = new FirefoxProfile();
-            profile.SetPreference("general.useragent.override", userAgent);
-            Driver = new FirefoxDriver(profile);
         }
 
         protected void Goto(string page)

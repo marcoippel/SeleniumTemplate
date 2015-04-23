@@ -3,18 +3,21 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Safari;
+using SeleniumTestTemplate.Enums;
+using SeleniumTestTemplate.Models;
 
 namespace SeleniumTestTemplate.Helpers
 {
     public class SeleniumDriverHelper
     {
-        public static IWebDriver GetDriver()
+        public static IWebDriver GetDriver(Devices device)
         {
-            return GetDriver(string.Empty);
+            return GetDriver(string.Empty, device);
         }
 
-        public static IWebDriver GetDriver(string driver)
+        public static IWebDriver GetDriver(string driver, Devices device)
         {
+            DeviceModel model = Device.Get(device);
             IWebDriver webDriver;
             switch (driver.ToLower())
             {
@@ -29,7 +32,10 @@ namespace SeleniumTestTemplate.Helpers
                     break;
                 //case "firefox":
                 default:
-                    webDriver = new FirefoxDriver();
+                    var profile = new FirefoxProfile();
+                    profile.SetPreference("general.useragent.override", model.UserAgent);
+                    webDriver = new FirefoxDriver(profile);
+                    webDriver.Manage().Window.Size = model.ScreenSize;
                     break;
             }
             return webDriver;
