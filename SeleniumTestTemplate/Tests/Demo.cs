@@ -6,9 +6,9 @@ using SeleniumTestTemplate.Helpers;
 
 namespace SeleniumTestTemplate.Tests
 {
-    //[TestFixture(Devices.Ipad)]
-    //[TestFixture(Devices.Nexus5)]
-    [TestFixture]
+    [TestFixture(Devices.Ipad)]
+    [TestFixture(Devices.Nexus5)]
+    [TestFixture(Devices.Desktop)]
     public class Demo : SeleniumBase
     {
         private Devices _device;
