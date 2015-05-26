@@ -7,9 +7,10 @@ Selenium test template is a visualstudio template to get started with Selenium t
 
 ## How to get started?
 
-Download the [zipfile](https://github.com/marcoippel/SeleniumTemplate/tree/master/Template).
-
-Copy the zipfile to "%userprofile%\Documents\Visual Studio 2013\Templates\ProjectTemplates\Visual C#\Selenium"
+* Download the [zipfile](https://github.com/marcoippel/SeleniumTemplate/tree/master/Template).
+* Copy the zipfile to "%userprofile%\Documents\Visual Studio 2013\Templates\ProjectTemplates\Visual C#\Selenium".
+* Add a new project to your solution based on the seleniumtest template.
+* Restore the missing nuget packages.
 
 ## What is in the template
 * Nunit
