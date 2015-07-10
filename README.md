@@ -27,6 +27,10 @@ Copy the zipfile to "%userprofile%\Documents\Visual Studio 2013\Templates\Projec
   * Desktop
 * Helpers to help you to write your tests
 
+### Version 1.0.1
+* Extra property added for device type
+* Wait for ajax method added. In case of an jquery ajax call it waits till the ajax call is finished
+
 ## Examples
 
     namespace SeleniumTestTemplate.Tests
