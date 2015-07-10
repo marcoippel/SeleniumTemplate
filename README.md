@@ -28,8 +28,8 @@ Copy the zipfile to "%userprofile%\Documents\Visual Studio 2013\Templates\Projec
 * Helpers to help you to write your tests
 
 ### Version 1.0.1
-* Extra property added for device type
-* Wait for ajax method added. In case of an jquery ajax call it waits till the ajax call is finished
+* [Extra property added for device type](https://github.com/marcoippel/SeleniumTemplate/commit/e1b2d527826403eae8a6253e6175ea372ed67521)
+* [Wait for ajax method added. In case of an jquery ajax call it waits till the ajax call is finished](https://github.com/marcoippel/SeleniumTemplate/commit/ee51aa7a375371d929c758250d0df2599007d0dc)
 
 ## Examples
 
