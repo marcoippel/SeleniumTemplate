@@ -72,6 +72,7 @@
     <Compile Include="Business\SeleniumBase.cs" />
     <Compile Include="Const\Regex.cs" />
     <Compile Include="Enums\Devices.cs" />
+    <Compile Include="Enums\DeviceType.cs" />
     <Compile Include="Extensions\WebElement.cs" />
     <Compile Include="Helpers\AttributeType.cs" />
     <Compile Include="Helpers\ElementType.cs" />
