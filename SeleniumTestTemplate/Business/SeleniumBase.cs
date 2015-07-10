@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Threading;
 using OpenQA.Selenium;
 using SeleniumTestTemplate.Enums;
 using SeleniumTestTemplate.Extensions;
@@ -88,6 +89,17 @@ namespace SeleniumTestTemplate.Business
         protected void SubmitData()
         {
             Driver.GetElementByAttribute(ElementType.Button, AttributeType.Type, "submit").Click();
+        }
+
+        protected void WaitForAjax()
+        {
+            while (true) // Handle timeout somewhere
+            {
+                var ajaxIsComplete = (bool)(Driver as IJavaScriptExecutor).ExecuteScript("return jQuery.active == 0");
+                if (ajaxIsComplete)
+                    break;
+                Thread.Sleep(100);
+            }
         }
     }
 }
