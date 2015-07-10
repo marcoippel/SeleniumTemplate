@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using SeleniumTestTemplate.Enums;
 
 namespace SeleniumTestTemplate.Models
 {
@@ -6,5 +7,6 @@ namespace SeleniumTestTemplate.Models
     {
         public Size ScreenSize { get; set; }
         public string UserAgent { get; set; }
+        public DeviceType Type { get; set; }
     }
 }
