@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Microsoft.Expression.Encoder.ScreenCapture;
 using NUnit.Framework;
 using SeleniumTestTemplate.Business;
 using SeleniumTestTemplate.Enums;
@@ -12,6 +13,7 @@ namespace SeleniumTestTemplate.Tests
     public class Demo : SeleniumBase
     {
         private Devices _device;
+        private ScreenCaptureJob scj;
         public Demo()
         {
             this._device = Devices.Desktop;
@@ -28,11 +30,15 @@ namespace SeleniumTestTemplate.Tests
         public void Initialize()
         {
             SetupDriver(_device);
+            scj = new ScreenCaptureJob();
+            scj.OutputScreenCaptureFileName = TestContext.CurrentContext.TestDirectory + "\\" + _device + ".wmv";
+            scj.Start();
         }
 
         [TearDown]
         public void Cleanup()
         {
+            scj.Stop();
             Driver.Quit();
         }
 
